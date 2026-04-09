@@ -24,13 +24,13 @@ print "\n";
 $encoded =  (xor_this($clear, $key));
 $b64_encoded = base64_encode ($encoded);
 print "Encoded text\n";
-var_dump ($b64_encoded);
+
 print "\n";
 
 $b64_decoded = base64_decode ($b64_encoded);
 $decoded = xor_this($b64_decoded, $key);
 print "Decoded text\n";
-var_dump ($decoded);
+
 print "\n";
 
 ?>
