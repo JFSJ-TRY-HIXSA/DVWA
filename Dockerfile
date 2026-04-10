@@ -22,4 +22,7 @@ COPY --chown=www-data:www-data config/config.inc.php.dist config/config.inc.php
 
 # This is configuring the stuff for the API
 RUN cd /var/www/html/vulnerabilities/api \
- && composer install \
+ && composer install
+
+RUN useradd -U -u 1000 appuser && chown -R 1000:1000 /var/www/html
+USER 1000
